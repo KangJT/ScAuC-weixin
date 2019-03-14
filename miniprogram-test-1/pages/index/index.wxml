@@ -15,9 +15,18 @@
 <!--logs.wxml-->
 <view class='container'>
   <block>
-      <view class="log-img" >
-         <image src='../images/1.png'></image>
-      </view>
+      <swiper 
+            indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}"
+            interval="{{interval}}"
+            duration="{{duration}}"
+          >
+            <block wx:for="{{imgUrls}}">
+              <swiper-item class="log-img">
+                <image src="{{item}}" class="slide-image" width="355" height="150" />
+              </swiper-item>
+            </block>
+      </swiper >
       <view class="log-icon">
          <view class='text'>
           <image src='../images/2.png'></image>
@@ -38,25 +47,36 @@
       </view>
       <view class="title">
          <view class='title-text'>
-             <text>
-                精品佳作
-             </text>
-             <text bindtap='bindViewTap'>
+            <view class='left'>
+                <text class='title-text-border'></text>
+                <text class='title-text-zuopin'>
+                    精品佳作
+                </text>
+            </view>
+             
+             <text bindtap='bindViewTap' class='title-text-more'>
                 查看更大多
               </text>
          </view>
          <view class='title-img'>
              <view class='img-every'>
                <image src='../images/6.png'></image>
-               <text>
-                 黑魔法南京但实际上明年底建成世界 
-               </text>
+               <view class='text1'>
+                    黑魔法
+               </view>
+                 
+               <view class='text2'>
+                  南京但实际上明年底建成世界 
+               </view>
              </view>
              <view class='img-every'>
                <image src='../images/6.png'></image>
-               <text>
-                 黑魔法南京但实际上明年底建成世界 
-               </text>
+               <view class='text1'>
+                    黑魔法
+               </view>
+               <view class='text2'>
+                  南京但实际上明年底建成世界 
+               </view>
              </view>
          </view>
       </view>
